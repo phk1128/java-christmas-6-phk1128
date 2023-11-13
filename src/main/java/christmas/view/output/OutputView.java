@@ -27,24 +27,24 @@ public class OutputView {
         System.out.println(PREVIEW);
     }
 
-    public void printOrderMenusDetailMessage(String orderMenusDetail) {
-        System.out.println(ORDER_MENUS_DETAIL_TITLE + "\n" + orderMenusDetail);
+    public void printOrderMenusDetails(String orderMenuDetails) {
+        System.out.println(ORDER_MENUS_DETAIL_TITLE + "\n" + orderMenuDetails);
     }
 
-    public void printTotalPriceMessage(String totalPriceMessage) {
-        System.out.println(TOTAL_PRICE_TITLE + "\n" + totalPriceMessage);
+    public void printTotalPriceBeforeDiscount(String totalPriceBeforeDiscount) {
+        System.out.println(TOTAL_PRICE_TITLE + "\n" + totalPriceBeforeDiscount);
     }
 
-    public void printPresentationMenuMessage(String presentationMenuMessage) {
-        System.out.println(PRESENTATION_MENU_TITLE + "\n" + presentationMenuMessage);
+    public void printPresentationMenu(String presentationMenu) {
+        System.out.println(PRESENTATION_MENU_TITLE + "\n" + presentationMenu);
     }
 
-    public void printBenefitDetailMessage(String benefitDetailMessage) {
-        System.out.println(BENEFIT_DETAIL_TITLE + "\n" + benefitDetailMessage);
+    public void printBenefitDetails(String benefitDetails) {
+        System.out.println(BENEFIT_DETAIL_TITLE + "\n" + benefitDetails);
     }
 
-    public void printTotalDiscountMessage(String totalDiscountMessage) {
-        System.out.println(TOTAL_DISCOUNT_TITLE + "\n" + totalDiscountMessage);
+    public void printTotalDiscount(String totalDiscount) {
+        System.out.println(TOTAL_DISCOUNT_TITLE + "\n" + totalDiscount);
     }
 
     public void printTotalPriceAfterDiscount(String totalPriceAfterDiscount) {
