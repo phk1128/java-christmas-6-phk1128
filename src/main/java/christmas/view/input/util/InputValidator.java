@@ -5,6 +5,10 @@ import java.util.regex.Pattern;
 
 public class InputValidator {
 
+    private InputValidator() {
+
+    }
+
     public static class Menus {
 
         public static void validateMenus(List<String> menus) {

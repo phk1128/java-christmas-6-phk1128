@@ -7,6 +7,10 @@ public class InputConvertor {
 
     private static final String DELIMITER = ",";
 
+    private InputConvertor() {
+
+    }
+
     public static List<String> convertStringToList(String input) {
         input = input.replace(" ", "");
         return Arrays.asList(input.split(DELIMITER));
