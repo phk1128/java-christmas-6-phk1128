@@ -19,7 +19,7 @@ public class Benefit {
                 .reduce(0, Integer::sum);
     }
 
-    public void addDiscount(Event event, int discount) {
+    public void addDiscountIntoDetails(Event event, int discount) {
         details.computeIfPresent(event, (key, value) -> value + discount);
     }
 
@@ -39,11 +39,12 @@ public class Benefit {
     public String presentationMenuToString() {
         Event presentation = Event.PRESENTATION;
         StringBuilder sb = new StringBuilder("없음\n");
-        if (details.get(presentation) != 0) {
+        int discount = details.get(presentation);
+        if (discount != 0) {
             sb.setLength(0);
             sb.append(presentation.getTarget());
             sb.append(" ");
-            sb.append("1개");
+            sb.append(String.format("%d개", Math.abs(discount / Event.PRESENTATION.getDiscount())));
             sb.append("\n");
         }
         return sb.toString();

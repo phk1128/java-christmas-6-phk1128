@@ -17,8 +17,8 @@ class BenefitTest {
         int discountPresentation = -25000;
         //when
         Benefit benefit = new Benefit();
-        benefit.addDiscount(weekday, discountWeekday);
-        benefit.addDiscount(presentation, discountPresentation);
+        benefit.addDiscountIntoDetails(weekday, discountWeekday);
+        benefit.addDiscountIntoDetails(presentation, discountPresentation);
         //then
         assertThat(benefit.calculateTotalDiscount())
                 .isEqualTo(discountWeekday + discountPresentation);
@@ -36,9 +36,9 @@ class BenefitTest {
         int discountChristmas = -3200;
         //when
         Benefit benefit = new Benefit();
-        benefit.addDiscount(weekend, discountWeekend);
-        benefit.addDiscount(presentation, discountPresentation);
-        benefit.addDiscount(christmas, discountChristmas);
+        benefit.addDiscountIntoDetails(weekend, discountWeekend);
+        benefit.addDiscountIntoDetails(presentation, discountPresentation);
+        benefit.addDiscountIntoDetails(christmas, discountChristmas);
         //then
         assertThat(benefit.detailsToString())
                 .contains("주말 할인: -8,116", "증정 이벤트: -25,000", "크리스마스 디데이 할인: -3,200");
@@ -63,7 +63,7 @@ class BenefitTest {
         int discountPresentation = -25000;
         //when
         Benefit benefit = new Benefit();
-        benefit.addDiscount(presentation, discountPresentation);
+        benefit.addDiscountIntoDetails(presentation, discountPresentation);
 
         //then
         assertThat(benefit.calculatePresentationPrice()).isEqualTo(discountPresentation);
@@ -77,7 +77,7 @@ class BenefitTest {
         int discountPresentation = -25000;
         //when
         Benefit benefit = new Benefit();
-        benefit.addDiscount(presentation, discountPresentation);
+        benefit.addDiscountIntoDetails(presentation, discountPresentation);
         //then
         assertThat(benefit.presentationMenuToString()).contains("샴페인 1개");
     }
