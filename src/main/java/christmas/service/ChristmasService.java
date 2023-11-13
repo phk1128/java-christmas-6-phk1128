@@ -4,8 +4,20 @@ import christmas.domain.Badge;
 import christmas.domain.Benefit;
 import christmas.domain.Event;
 import christmas.domain.OrderMenu;
+import christmas.view.input.template.InputCallback;
+import christmas.view.input.template.InputTemplate;
 
 public class ChristmasService {
+
+    private final InputTemplate inputTemplate;
+
+    public ChristmasService() {
+        this.inputTemplate = new InputTemplate();
+    }
+
+    public <T> T getInputInfo(InputCallback<T> callback) {
+        return inputTemplate.execute(callback);
+    }
 
     public Benefit getBenefit(OrderMenu orderMenu, int day) {
         Benefit benefit = new Benefit();
