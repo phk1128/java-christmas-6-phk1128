@@ -18,7 +18,7 @@ public class InputView {
         return new OrderMenu(menus);
     }
 
-    public int requestMoney() {
+    public int requestDay() {
         String input = Console.readLine();
         validateDay(input);
         return convertStringToInt(input);
