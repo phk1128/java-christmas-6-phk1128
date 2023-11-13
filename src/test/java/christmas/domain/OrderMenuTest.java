@@ -51,8 +51,8 @@ class OrderMenuTest {
 
     }
 
+    @DisplayName("주문 메뉴 예외처리 테스트")
     @Nested
-    @DisplayName("잘못된 주문으로 예외가 발생한다.")
     class OrderMenuExceptionTest {
         @DisplayName("주문에 중복된 메뉴가 존재하므로 예외가 발생한다.")
         @Test
