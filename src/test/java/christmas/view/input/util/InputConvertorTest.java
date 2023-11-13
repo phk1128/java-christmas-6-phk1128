@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class InputConvertorTest {
 
-    @DisplayName("문자의 공백을 제거하고 ',' 을 기준으로 split한다. ")
+    @DisplayName("문자의 공백을 제거하고 ',' 을 기준으로 split한다.")
     @Test
     void convertStringToList() throws Exception {
         //given

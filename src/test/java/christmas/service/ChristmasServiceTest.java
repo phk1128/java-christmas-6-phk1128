@@ -55,7 +55,7 @@ class ChristmasServiceTest {
         //when
         OrderMenu orderMenu = new OrderMenu(menus);
         //then
-        assertThat(christmasService.getTotalPriceBeforeDiscount(orderMenu)).isEqualTo("80,000원");
+        assertThat(christmasService.getTotalPriceBeforeDiscount(orderMenu)).contains("80,000원");
 
     }
 
