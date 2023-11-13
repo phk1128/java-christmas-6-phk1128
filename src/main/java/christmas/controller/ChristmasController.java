@@ -28,12 +28,12 @@ public class ChristmasController {
 
     private int requestDay() {
         outputView.printRequestDayMessage();
-        return christmasService.getInputInfo(inputView::requestDay);
+        return christmasService.getInputRequestResult(inputView::requestDay);
     }
 
     private OrderMenu requestOrderMenu() {
         outputView.printRequestOrderMessage();
-        return christmasService.getInputInfo(inputView::requestOrderMenu);
+        return christmasService.getInputRequestResult(inputView::requestOrderMenu);
     }
 
     private void responseAll(OrderMenu orderMenu, Benefit benefit) {

@@ -15,7 +15,7 @@ public class ChristmasService {
         this.inputTemplate = new InputTemplate();
     }
 
-    public <T> T getInputInfo(InputCallback<T> callback) {
+    public <T> T getInputRequestResult(InputCallback<T> callback) {
         return inputTemplate.execute(callback);
     }
 
