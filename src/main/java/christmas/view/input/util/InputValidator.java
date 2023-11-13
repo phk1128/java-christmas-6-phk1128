@@ -29,4 +29,25 @@ public class InputValidator {
 
     }
 
+    public static class Day {
+
+        public static void validateDay(String day) {
+            validateFormat(day);
+            validateRange(day);
+        }
+
+        public static void validateFormat(String day) {
+            if (!Pattern.matches("^[0-9\s]+$", day)) {
+                throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+            }
+        }
+
+        public static void validateRange(String day) {
+            int dayNum = Integer.parseInt(day);
+            if (dayNum <= 0 || dayNum > 31) {
+                throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+            }
+        }
+    }
+
 }
