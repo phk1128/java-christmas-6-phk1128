@@ -25,7 +25,7 @@ public class ChristmasService {
         return benefit;
     }
 
-    public String getOrderMenuDetail(OrderMenu orderMenu) {
+    public String getOrderMenuDetails(OrderMenu orderMenu) {
         return orderMenu.detailsToString();
     }
 
@@ -35,6 +35,14 @@ public class ChristmasService {
 
     public String getPresentationMenu(Benefit benefit) {
         return benefit.presentationMenuToString();
+    }
+
+    public String getBenefitDetails(Benefit benefit) {
+        return benefit.detailsToString();
+    }
+
+    public String getTotalDiscount(Benefit benefit) {
+        return String.format("%,d원\n", benefit.calculateTotalDiscount());
     }
 
     public String getTotalPriceAfterDiscount(OrderMenu orderMenu, Benefit benefit) {
