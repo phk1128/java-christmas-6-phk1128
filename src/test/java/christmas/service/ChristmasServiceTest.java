@@ -1,6 +1,7 @@
 package christmas.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import christmas.domain.Benefit;
 import christmas.domain.OrderMenu;
@@ -70,6 +71,20 @@ class ChristmasServiceTest {
         Benefit benefit = christmasService.getBenefit(orderMenu, day);
         //then
         assertThat(christmasService.getTotalPriceAfterDiscount(orderMenu, benefit)).contains("135,754원");
+    }
+
+    @DisplayName("25일이 지나 크리스마스 디데이 할인이 포함되지 않는다.")
+    @Test
+    void nothingChristmasEvent() throws Exception {
+        //given
+        List<String> menus = List.of("티본스테이크-1", "바비큐립-1", "초코케이크-2", "제로콜라-1");
+        int day = 27;
+        //when
+        OrderMenu orderMenu = new OrderMenu(menus);
+        Benefit benefit = christmasService.getBenefit(orderMenu, day);
+        //then
+        assertFalse(benefit.detailsToString().contains("크리스마스 디데이 할인"));
+
     }
 
 }

@@ -71,7 +71,7 @@ public class ChristmasService {
         int discountFromTotal = event.getDiscountFromTotal();
         result -= (discount * orderMenuCount) + discountFromTotal;
 
-        if (event == Event.CHRISTMAS) {
+        if (event == Event.CHRISTMAS && day <= 25) {
             result -= discount * (day - 1) + 1000;
         }
         if (event == Event.PRESENTATION) {
