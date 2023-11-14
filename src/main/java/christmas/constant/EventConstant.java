@@ -23,7 +23,7 @@ public class EventConstant {
         public static final String WEEKEND = MenuType.MAIN;
         public static final String CHRISTMAS = MenuType.NONE;
         public static final String SPECIAL = MenuType.NONE;
-        public static final String PRESENTATION = Menu.샴페인.name();
+        public static final String PRESENTATION = Menu.CHAMPAGNE.getName();
     }
 
     public static class Discount {
@@ -31,7 +31,7 @@ public class EventConstant {
         public static final int WEEKEND = 2023;
         public static final int CHRISTMAS = 100;
         public static final int SPECIAL = 0;
-        public static final int PRESENTATION = Menu.샴페인.getPrice();
+        public static final int PRESENTATION = Menu.CHAMPAGNE.getPrice();
     }
 
     public static class Message {
