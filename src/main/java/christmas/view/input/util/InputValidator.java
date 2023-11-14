@@ -48,7 +48,7 @@ public class InputValidator {
         }
 
         public static void validateRange(String day) {
-            int dayNum = Integer.parseInt(day);
+            int dayNum = InputConvertor.convertStringToInt(day);
             if (dayNum <= 0 || dayNum > 31) {
                 throw new IllegalArgumentException(ErrorMessage.WRONG_DAY);
             }
