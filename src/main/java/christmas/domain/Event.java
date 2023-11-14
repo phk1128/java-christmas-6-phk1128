@@ -44,7 +44,6 @@ public enum Event {
     public static List<Event> findAllByDay(int day) {
         return Arrays.stream(Event.values())
                 .filter(event -> event.days.contains(day) || event.days.contains(day % 7))
-                .distinct()
                 .toList();
     }
 
