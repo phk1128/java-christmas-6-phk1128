@@ -4,15 +4,16 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public enum Badge {
-    없음(0),
-    별(-5000),
-    트리(-10000),
-    산타(-20000);
+    NONE("없음", 0),
+    STAR("별", -5000),
+    TREE("트리", -10000),
+    SANTA("산타", -20000);
 
-
+    private final String name;
     private final int totalDiscount;
 
-    Badge(int totalDiscount) {
+    Badge(String name, int totalDiscount) {
+        this.name = name;
         this.totalDiscount = totalDiscount;
     }
 
@@ -21,7 +22,11 @@ public enum Badge {
         return Arrays.stream(Badge.values())
                 .filter(badge -> badge.totalDiscount >= totalDiscount)
                 .min(Comparator.comparingInt(badge -> badge.totalDiscount - totalDiscount))
-                .map(badge -> badge.name())
-                .orElse(없음.name());
+                .map(Badge::getName)
+                .orElse(NONE.getName());
+    }
+
+    public String getName() {
+        return name;
     }
 }
