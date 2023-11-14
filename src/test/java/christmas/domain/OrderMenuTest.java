@@ -29,7 +29,7 @@ class OrderMenuTest {
         //given
         List<String> menus = List.of("티본스테이크-1", "바비큐립-1", "시저샐러드-1");
         //when
-        int totalPrice = Menu.티본스테이크.getPrice() + Menu.바비큐립.getPrice() + Menu.시저샐러드.getPrice();
+        int totalPrice = Menu.T_BONE_STEAK.getPrice() + Menu.BBQ_RIBS.getPrice() + Menu.CAESAR_SALAD.getPrice();
         OrderMenu orderMenu = new OrderMenu(menus);
         //then
         assertThat(orderMenu.calculateTotalPrice()).isEqualTo(totalPrice);

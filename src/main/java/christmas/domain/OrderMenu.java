@@ -1,6 +1,7 @@
 package christmas.domain;
 
 
+import christmas.constant.ErrorMessage;
 import christmas.constant.MenuConstant.MenuType;
 import java.util.EnumMap;
 import java.util.List;
@@ -19,7 +20,7 @@ public class OrderMenu {
     public String detailsToString() {
         StringBuilder sb = new StringBuilder();
         for (Entry<Menu, Integer> entry : details.entrySet()) {
-            sb.append(entry.getKey().toString());
+            sb.append(entry.getKey().getName());
             sb.append(" ");
             sb.append(String.format("%d개", entry.getValue()));
             sb.append("\n");
@@ -37,7 +38,7 @@ public class OrderMenu {
     public int countMenuByEventTarget(String eventTarget) {
         return details.entrySet()
                 .stream()
-                .filter(entry -> entry.getKey().getMenuType().equals(eventTarget))
+                .filter(entry -> entry.getKey().getType().equals(eventTarget))
                 .mapToInt(Entry::getValue)
                 .sum();
     }
@@ -52,12 +53,12 @@ public class OrderMenu {
 
     private void putMenuIntoDetail(String menu, Map<Menu, Integer> detail) {
         String[] menuAndQuantity = menu.split("-");
-        detail.put(Menu.valueOf(menuAndQuantity[0]), Integer.parseInt(menuAndQuantity[1]));
+        detail.put(Menu.findByName(menuAndQuantity[0]), Integer.parseInt(menuAndQuantity[1]));
     }
 
     private void validateMenus(List<String> menus) {
         if (isDuplicate(menus) || isNothing(menus)) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요");
+            throw new IllegalArgumentException(ErrorMessage.WRONG_MENU);
         }
         validateQuantity(menus);
         validateOnlyBeverage(menus);
@@ -78,7 +79,7 @@ public class OrderMenu {
 
     private void validateQuantity(List<String> menus) {
         if (calculateQuantity(menus) > 20) {
-            throw new IllegalArgumentException("[ERROR] 메뉴는 한 번에 최대 20개까지만 주문할 수 있습니다.");
+            throw new IllegalArgumentException(ErrorMessage.QUANTITY_OVER);
         }
     }
 
@@ -91,14 +92,14 @@ public class OrderMenu {
 
     private void validateOnlyBeverage(List<String> menus) {
         if (isOnlyBeverage(menus)) {
-            throw new IllegalArgumentException("[ERROR] 음료만 주문 시, 주문할 수 없습니다.");
+            throw new IllegalArgumentException(ErrorMessage.ONLY_DRINK);
         }
     }
 
     private boolean isOnlyBeverage(List<String> menus) {
         return menus.stream()
                 .map(menu -> menu.substring(0, menu.indexOf("-")))
-                .allMatch(menu -> Menu.valueOf(menu).getMenuType().equals(MenuType.BEVERAGE));
+                .allMatch(menu -> Menu.findByName(menu).getType().equals(MenuType.DRINK));
     }
 
 }
