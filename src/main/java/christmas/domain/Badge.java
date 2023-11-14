@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public enum Badge {
-
+    없음(0),
     별(-5000),
     트리(-10000),
     산타(-20000);
@@ -22,6 +22,6 @@ public enum Badge {
                 .filter(badge -> badge.totalDiscount >= totalDiscount)
                 .min(Comparator.comparingInt(badge -> badge.totalDiscount - totalDiscount))
                 .map(badge -> badge.name())
-                .orElse("없음");
+                .orElse(없음.name());
     }
 }
