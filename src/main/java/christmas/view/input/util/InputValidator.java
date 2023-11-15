@@ -21,7 +21,7 @@ public class InputValidator {
         }
 
         public static void validateFormat(String menu) {
-            if (!Pattern.matches("^[a-z|A-z|ㄱ-ㅎ|가-힣|0-9|\s]+-[0-9\s]+$", menu)) {
+            if (!Constant.MENU_PATTERN.matcher(menu).matches()) {
                 throw new IllegalArgumentException(ErrorMessage.WRONG_MENU);
             }
         }
