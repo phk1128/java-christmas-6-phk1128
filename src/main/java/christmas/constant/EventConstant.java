@@ -31,7 +31,7 @@ public class EventConstant {
         public static final int WEEKEND = 2023;
         public static final int CHRISTMAS = 100;
         public static final int SPECIAL = 0;
-        public static final int PRESENTATION = Menu.CHAMPAGNE.getPrice();
+        public static final int PRESENTATION = Menu.CHAMPAGNE.getPrice() * 1;
     }
 
     public static class Message {
