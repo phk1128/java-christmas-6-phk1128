@@ -16,7 +16,7 @@ public class OutputView {
 
 
     public void printRequestDayMessage() {
-        System.out.println(INITIATING + "\n" + REQUEST_DAY);
+        System.out.println(INITIATING + System.lineSeparator() + REQUEST_DAY);
     }
 
     public void printRequestOrderMessage() {
@@ -28,31 +28,31 @@ public class OutputView {
     }
 
     public void printOrderMenusDetails(String orderMenuDetails) {
-        System.out.println(ORDER_MENUS_DETAIL_TITLE + "\n" + orderMenuDetails);
+        System.out.println(ORDER_MENUS_DETAIL_TITLE + System.lineSeparator() + orderMenuDetails);
     }
 
     public void printTotalPriceBeforeDiscount(String totalPriceBeforeDiscount) {
-        System.out.println(TOTAL_PRICE_TITLE + "\n" + totalPriceBeforeDiscount);
+        System.out.println(TOTAL_PRICE_TITLE + System.lineSeparator() + totalPriceBeforeDiscount);
     }
 
     public void printPresentationMenu(String presentationMenu) {
-        System.out.println(PRESENTATION_MENU_TITLE + "\n" + presentationMenu);
+        System.out.println(PRESENTATION_MENU_TITLE + System.lineSeparator() + presentationMenu);
     }
 
     public void printBenefitDetails(String benefitDetails) {
-        System.out.println(BENEFIT_DETAIL_TITLE + "\n" + benefitDetails);
+        System.out.println(BENEFIT_DETAIL_TITLE + System.lineSeparator() + benefitDetails);
     }
 
     public void printTotalDiscount(String totalDiscount) {
-        System.out.println(TOTAL_DISCOUNT_TITLE + "\n" + totalDiscount);
+        System.out.println(TOTAL_DISCOUNT_TITLE + System.lineSeparator() + totalDiscount);
     }
 
     public void printTotalPriceAfterDiscount(String totalPriceAfterDiscount) {
-        System.out.println(TOTAL_PRICE_AFTER_DISCOUNT + "\n" + totalPriceAfterDiscount);
+        System.out.println(TOTAL_PRICE_AFTER_DISCOUNT + System.lineSeparator() + totalPriceAfterDiscount);
     }
 
     public void printBadge(String badge) {
-        System.out.print(BADGE_TITLE + "\n" + badge);
+        System.out.print(BADGE_TITLE + System.lineSeparator() + badge);
     }
 
 }

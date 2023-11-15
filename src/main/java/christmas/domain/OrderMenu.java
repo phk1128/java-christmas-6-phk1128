@@ -23,7 +23,7 @@ public class OrderMenu {
             sb.append(entry.getKey().getName());
             sb.append(" ");
             sb.append(String.format("%d개", entry.getValue()));
-            sb.append("\n");
+            sb.append(System.lineSeparator());
         }
         return sb.toString();
     }

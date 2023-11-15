@@ -30,7 +30,7 @@ public class ChristmasService {
     }
 
     public String getTotalPriceBeforeDiscount(OrderMenu orderMenu) {
-        return String.format("%,d원\n", orderMenu.calculateTotalPrice());
+        return String.format("%,d원" + System.lineSeparator(), orderMenu.calculateTotalPrice());
     }
 
     public String getPresentationMenu(Benefit benefit) {
@@ -42,14 +42,14 @@ public class ChristmasService {
     }
 
     public String getTotalDiscount(Benefit benefit) {
-        return String.format("%,d원\n", benefit.calculateTotalDiscount());
+        return String.format("%,d원" + System.lineSeparator(), benefit.calculateTotalDiscount());
     }
 
     public String getTotalPriceAfterDiscount(OrderMenu orderMenu, Benefit benefit) {
         int totalPrice = orderMenu.calculateTotalPrice();
         int totalDiscount = benefit.calculateTotalDiscount();
         totalPrice += (totalDiscount - benefit.calculatePresentationPrice());
-        return String.format("%,d원\n", totalPrice);
+        return String.format("%,d원" + System.lineSeparator(), totalPrice);
     }
 
     public String getBadge(Benefit benefit) {
