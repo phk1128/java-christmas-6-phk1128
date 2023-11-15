@@ -1,5 +1,6 @@
 package christmas.view.input.util;
 
+import christmas.constant.Constant;
 import christmas.constant.ErrorMessage;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -26,7 +27,7 @@ public class InputValidator {
         }
 
         public static void validateQuantity(String menu) {
-            if (menu.split("-")[1].equals("0")) {
+            if (menu.split(Constant.DELIMITER_HYPHEN)[1].equals("0")) {
                 throw new IllegalArgumentException(ErrorMessage.WRONG_MENU);
             }
 

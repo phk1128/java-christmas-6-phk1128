@@ -1,5 +1,6 @@
 package christmas.domain;
 
+import christmas.constant.Constant;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -24,7 +25,7 @@ public class Benefit {
     }
 
     public String detailsToString() {
-        StringBuilder sb = new StringBuilder("없음" + System.lineSeparator());
+        StringBuilder sb = new StringBuilder(Constant.NOTHING + System.lineSeparator());
         if (calculateTotalDiscount() != 0) {
             sb.setLength(0);
             appendDetails(sb);
@@ -38,13 +39,13 @@ public class Benefit {
 
     public String presentationMenuToString() {
         Event presentation = Event.PRESENTATION;
-        StringBuilder sb = new StringBuilder("없음" + System.lineSeparator());
+        StringBuilder sb = new StringBuilder(Constant.NOTHING + System.lineSeparator());
         int discount = details.get(presentation);
         if (discount != 0) {
             sb.setLength(0);
             sb.append(presentation.getTarget());
-            sb.append(" ");
-            sb.append(String.format("%d개", Math.abs(discount / Event.PRESENTATION.getDiscount())));
+            sb.append(Constant.SPACE);
+            sb.append(String.format(Constant.MENU_UNIT, Math.abs(discount / Event.PRESENTATION.getDiscount())));
             sb.append(System.lineSeparator());
         }
         return sb.toString();
@@ -57,8 +58,8 @@ public class Benefit {
             int discount = entry.getValue();
             if (discount != 0) {
                 benefitDetail.append(eventMessage);
-                benefitDetail.append(" ");
-                benefitDetail.append(String.format("%,d원", discount));
+                benefitDetail.append(Constant.SPACE);
+                benefitDetail.append(String.format(Constant.PRICE_UNIT, discount));
                 benefitDetail.append(System.lineSeparator());
             }
         }

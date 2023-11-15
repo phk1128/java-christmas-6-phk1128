@@ -1,5 +1,6 @@
 package christmas.service;
 
+import christmas.constant.Constant;
 import christmas.domain.Badge;
 import christmas.domain.Benefit;
 import christmas.domain.Event;
@@ -30,7 +31,7 @@ public class ChristmasService {
     }
 
     public String getTotalPriceBeforeDiscount(OrderMenu orderMenu) {
-        return String.format("%,d원" + System.lineSeparator(), orderMenu.calculateTotalPrice());
+        return String.format(Constant.PRICE_UNIT + System.lineSeparator(), orderMenu.calculateTotalPrice());
     }
 
     public String getPresentationMenu(Benefit benefit) {
@@ -42,14 +43,14 @@ public class ChristmasService {
     }
 
     public String getTotalDiscount(Benefit benefit) {
-        return String.format("%,d원" + System.lineSeparator(), benefit.calculateTotalDiscount());
+        return String.format(Constant.PRICE_UNIT + System.lineSeparator(), benefit.calculateTotalDiscount());
     }
 
     public String getTotalPriceAfterDiscount(OrderMenu orderMenu, Benefit benefit) {
         int totalPrice = orderMenu.calculateTotalPrice();
         int totalDiscount = benefit.calculateTotalDiscount();
         totalPrice += (totalDiscount - benefit.calculatePresentationPrice());
-        return String.format("%,d원" + System.lineSeparator(), totalPrice);
+        return String.format(Constant.PRICE_UNIT + System.lineSeparator(), totalPrice);
     }
 
     public String getBadge(Benefit benefit) {
