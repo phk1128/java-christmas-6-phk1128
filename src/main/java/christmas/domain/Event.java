@@ -42,32 +42,39 @@ public enum Event {
     }
 
     public static List<Event> findAllByDay(int day) {
+
         return Arrays.stream(Event.values())
                 .filter(event -> event.days.contains(day) || event.days.contains(day % 7))
                 .toList();
     }
 
     public static List<Event> getAllEvent() {
+
         return Arrays.stream(Event.values()).toList();
     }
 
     public int getDiscount() {
+
         return discount;
     }
 
     public int getDiscountFromTotal() {
+
         return discountFromTotal;
     }
 
     public String getTarget() {
+
         return target;
     }
 
     public int getCondition() {
+
         return condition;
     }
 
     public String getMessage() {
+
         return message;
     }
 }

@@ -18,7 +18,6 @@ public enum Badge {
     }
 
     public static String findByTotalDiscount(int totalDiscount) {
-
         return Arrays.stream(Badge.values())
                 .filter(badge -> badge.totalDiscount >= totalDiscount)
                 .min(Comparator.comparingInt(badge -> badge.totalDiscount - totalDiscount))
