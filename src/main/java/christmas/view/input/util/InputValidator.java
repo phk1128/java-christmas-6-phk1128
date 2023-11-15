@@ -3,7 +3,6 @@ package christmas.view.input.util;
 import christmas.constant.Constant;
 import christmas.constant.ErrorMessage;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class InputValidator {
 
@@ -43,7 +42,7 @@ public class InputValidator {
         }
 
         public static void validateFormat(String day) {
-            if (!Pattern.matches("^[0-9\s]+$", day)) {
+            if (!Constant.DAY_PATTERN.matcher(day).matches()) {
                 throw new IllegalArgumentException(ErrorMessage.WRONG_DAY);
             }
         }

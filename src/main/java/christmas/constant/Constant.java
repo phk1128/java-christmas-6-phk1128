@@ -12,4 +12,5 @@ public class Constant {
     public static final String NOTHING = "없음";
     public static final int MENU_MAXIMUM_QUANTITY = 20;
     public static final Pattern MENU_PATTERN = Pattern.compile("^[a-z|A-z|ㄱ-ㅎ|가-힣|0-9|\s]+-[0-9\s]+$");
+    public static final Pattern DAY_PATTERN = Pattern.compile("^[0-9\s]+$");
 }
