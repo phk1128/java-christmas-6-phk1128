@@ -40,6 +40,11 @@ public class EventConstant {
 
     }
 
+    public static class TotalDiscount {
+        public static final int SPECIAL = 1000;
+        public static final int OTHER = 0;
+    }
+
     public static class Message {
 
         public static final String SPECIAL = "특별 할인:";
