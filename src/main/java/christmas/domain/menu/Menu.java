@@ -7,6 +7,7 @@ import javax.swing.text.html.ObjectView;
 
 public enum Menu {
 
+    NONE("없는메뉴", 0, MenuType.NONE),
     MUSHROOM_SOUP("양송이수프", 6000, MenuType.APPETIZER),
     TAPAS("타파스", 5500, MenuType.APPETIZER),
     CAESAR_SALAD("시저샐러드", 8000, MenuType.APPETIZER),

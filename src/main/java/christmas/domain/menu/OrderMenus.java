@@ -1,6 +1,4 @@
 package christmas.domain.menu;
 
-public class OrderMenu {
-
-
+public class OrderMenus {
 }
