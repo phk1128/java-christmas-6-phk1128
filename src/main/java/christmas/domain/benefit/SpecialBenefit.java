@@ -27,8 +27,5 @@ public class SpecialBenefit extends Benefit {
         return discount;
     }
 
-//    private static boolean isSpecialDay(LocalDate visitDate) {
-//        return SPECIAL_DAYS.contains(visitDate.getDayOfMonth());
-//    }
 
 }
