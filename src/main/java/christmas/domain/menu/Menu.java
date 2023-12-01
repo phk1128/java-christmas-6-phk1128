@@ -1,5 +1,7 @@
 package christmas.domain.menu;
 
+import static christmas.util.ErrorMessage.INVALID_ORDER_MENU;
+
 import christmas.domain.menu.MenuConstant.MenuType;
 import java.util.Arrays;
 
@@ -35,7 +37,7 @@ public enum Menu {
         return Arrays.stream(Menu.values())
                 .filter(menu -> menu.getName().equals(menuName))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 없는 메뉴"));
+                .orElseThrow(() -> new IllegalArgumentException(INVALID_ORDER_MENU.getMessage()));
     }
 
     public String getType() {
