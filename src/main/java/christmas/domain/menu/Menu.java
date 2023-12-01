@@ -2,8 +2,6 @@ package christmas.domain.menu;
 
 import christmas.domain.menu.MenuConstant.MenuType;
 import java.util.Arrays;
-import java.util.Objects;
-import javax.swing.text.html.ObjectView;
 
 public enum Menu {
 
@@ -37,7 +35,7 @@ public enum Menu {
         return Arrays.stream(Menu.values())
                 .filter(menu -> menu.getName().equals(menuName))
                 .findFirst()
-                .orElseThrow(() ->new IllegalArgumentException("[ERROR] 없는 메뉴"));
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 없는 메뉴"));
     }
 
     public String getType() {
@@ -51,14 +49,5 @@ public enum Menu {
     public int getPrice() {
         return price;
     }
-    // Objects.equals는 null-safe
-//    public boolean isDessert() {
-//        return Objects.equals(type, MenuType.DESSERT);
-//    }
-//    public boolean isDrink() {
-//        return Objects.equals(type, MenuType.DRINK);
-//    }
-//    public boolean isMain() {
-//        return Objects.equals(type, MenuType.MAIN);
-//    }
+
 }
