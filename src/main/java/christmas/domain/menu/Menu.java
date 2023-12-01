@@ -7,7 +7,7 @@ import javax.swing.text.html.ObjectView;
 
 public enum Menu {
 
-    NONE("없는메뉴", 0, MenuType.NONE),
+    NONE("없음", 0, MenuType.NONE),
     MUSHROOM_SOUP("양송이수프", 6000, MenuType.APPETIZER),
     TAPAS("타파스", 5500, MenuType.APPETIZER),
     CAESAR_SALAD("시저샐러드", 8000, MenuType.APPETIZER),
@@ -37,7 +37,7 @@ public enum Menu {
         return Arrays.stream(Menu.values())
                 .filter(menu -> menu.getName().equals(menuName))
                 .findFirst()
-                .orElseThrow(IllegalArgumentException::new);
+                .orElseThrow(() ->new IllegalArgumentException("[ERROR] 없는 메뉴"));
     }
 
     public String getType() {
@@ -52,13 +52,13 @@ public enum Menu {
         return price;
     }
     // Objects.equals는 null-safe
-    public boolean isDessert() {
-        return Objects.equals(type, MenuType.DESSERT);
-    }
-    public boolean isDrink() {
-        return Objects.equals(type, MenuType.DRINK);
-    }
-    public boolean isMain() {
-        return Objects.equals(type, MenuType.MAIN);
-    }
+//    public boolean isDessert() {
+//        return Objects.equals(type, MenuType.DESSERT);
+//    }
+//    public boolean isDrink() {
+//        return Objects.equals(type, MenuType.DRINK);
+//    }
+//    public boolean isMain() {
+//        return Objects.equals(type, MenuType.MAIN);
+//    }
 }
