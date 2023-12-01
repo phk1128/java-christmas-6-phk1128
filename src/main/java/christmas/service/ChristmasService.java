@@ -7,7 +7,6 @@ import christmas.domain.benefit.GiftBenefit;
 import christmas.domain.benefit.SpecialBenefit;
 import christmas.domain.benefit.WeekdayBenefit;
 import christmas.domain.benefit.WeekendBenefit;
-import christmas.domain.gift.Gift;
 import christmas.domain.menu.OrderMenu;
 import christmas.domain.menu.OrderMenus;
 import christmas.domain.visit.Visit;
@@ -54,7 +53,6 @@ public class ChristmasService {
     public String getBadgeName(Benefits benefits) {
         return Badge.findByTotalDiscount(benefits.calculateTotalDiscount());
     }
-
 
 
 }
